@@ -82,10 +82,8 @@ def make_predictions(args: PredictArgs, smiles: List[List[str]] = None) -> List[
     # Predict with each model individually and sum predictions
     if args.dataset_type == 'multiclass':
         sum_preds = np.zeros((len(test_data), num_tasks, args.multiclass_num_classes))
-        sum_epi_uncs = np.zeros((len(test_data), args.num_tasks, args.multiclass_num_classes))
     else:
         sum_preds = np.zeros((len(test_data), num_tasks))
-        sum_epi_uncs = np.zeros((len(test_data), args.num_tasks))
 
     # Create data loader
     test_data_loader = MoleculeDataLoader(
