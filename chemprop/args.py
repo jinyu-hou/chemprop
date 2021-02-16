@@ -297,6 +297,8 @@ class TrainArgs(CommonArgs):
     """Aggregation scheme for atomic vectors into molecular vectors"""
     aggregation_norm: int = 100
     """For norm aggregation, number by which to divide summed up atomic features"""
+    ensemble_variance: bool = False
+    """Whether to calculate the variance of ensembles as a measure of epistemic uncertainty"""
 
     # Training arguments
     epochs: int = 30
@@ -470,6 +472,8 @@ class PredictArgs(CommonArgs):
     """Path to CSV file where predictions will be saved."""
     drop_extra_columns: bool = False
     """Whether to drop all columns from the test data file besides the SMILES columns and the new prediction columns."""
+    ensemble_variance: bool = False
+    """Whether to calculate the variance of ensembles as a measure of epistemic uncertainty"""
 
     @property
     def ensemble_size(self) -> int:
