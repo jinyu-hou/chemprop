@@ -12,7 +12,7 @@ from tqdm import tqdm
 
 from .data import MoleculeDatapoint, MoleculeDataset
 from .scaffold import log_scaffold_stats, scaffold_split
-from chemprop.args import PredictArgs, TrainArgs
+# from chemprop.args import PredictArgs, TrainArgs
 from chemprop.features import load_features, load_valid_atom_features
 
 
